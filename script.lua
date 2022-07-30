@@ -1,4 +1,6 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/synolope/meepcracked/main/ui-engine.lua"))()
+local function service(...) return game:GetService(...) end
+local MarketplaceService = service("MarketplaceService")
 
 local function loopwrap(func,int)
 	local connect = nil
