@@ -61,7 +61,7 @@ end
 local guiname = "MeepCracked"
 
 if identifyexecutor then
-    guiname = guiname .. " - " .. identifyexecutor()
+    guiname = guiname .. " - " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. " - Executor:" .. identifyexecutor() 
     
 end
 
@@ -89,7 +89,7 @@ local AvatarWindow = library:AddWindow("Avatar", WindowOptions)
 
 local Welcome = Window:AddTab("Welcome")
 Welcome:AddLabel("Thank you for using MeepCracked.")
-Welcome:AddButton("Join Our Discord Server",function()
+Welcome:AddButton("Join Our Discor Serve",function()
     local Settings = {
         InviteCode = "UtpqrGp29a" --add your invite code here (without the "https://discord.gg/" part)
     }
@@ -179,10 +179,10 @@ Throwing:AddButton("Throw At Clostest Player",function()
 	hit(getclosestplr())
 end)
 Throwing:AddButton("Throw At All Players",throwall)
-Throwing:AddSwitch("Loop Throw At All Players",loopwrap(throwall,10))
+Throwing:AddSwitch("Loop Throw At All Players",loopwrap(throwall,1)) -- Make the OPest cum!
 Throwing:AddSwitch("Loop Throw At You",loopwrap(function()
 	hit(game.Players.LocalPlayer)
-end,10))
+end,1))
 
 local fgs = Local:AddSwitch("Free Gamepasses",function(b)
 	checkdir()
@@ -408,11 +408,11 @@ game:GetService("ReplicatedStorage").Connection:InvokeServer(202, 1310)
 	game:GetService("ReplicatedStorage").ConnectionEvent:FireServer(210)
 end,80))
 
-Annoyance:AddSwitch("Spam Balloons",loopwrap(function()
+Annoyance:AddSwitch("Spam Balloons",loopwrap(function() -- Spasm
     game:GetService("ReplicatedStorage").Connection:InvokeServer(202)
 	game:GetService("ReplicatedStorage").Connection:InvokeServer(201, 1312, {})
 	game:GetService("ReplicatedStorage").Connection:InvokeServer(202)
-end,20))
+end,1))
 
 Local:AddButton("Fix Item Spam",function()
 	repeat
@@ -426,9 +426,10 @@ Annoyance:AddSwitch("Spam Teleport Notification",loopwrap(function()
 	for _, player in pairs(game.Players:GetPlayers()) do
 		game:GetService("ReplicatedStorage").Connection:InvokeServer(154,player.UserId,{})
 	end
-end,5))
+end,1)) -- oh nooo...
 
 Annoyance:AddButton("Load Fling Script (Buggy & Breaks)",function()
+		print("LOADING LOL")
 	local LP = game:GetService("Players").LocalPlayer
 
 local function align(part0,part1)
@@ -505,6 +506,7 @@ game:GetService("ReplicatedStorage").Connection:InvokeServer(332)
 wait(1)
 
 loadcharacter(LP.Character)
+		print("SUCC")
 end)
 
 local Cloner = AvatarWindow:AddTab("Cloner")
